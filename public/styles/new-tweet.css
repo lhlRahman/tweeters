@@ -1,0 +1,66 @@
+/* CSS style for new-tweets */
+.error-length, .error-empty {
+  display: none;
+  border: 2px dotted;
+  padding: 0.5rem;
+  width: fit-content;
+  background-position: 10px center;
+  color: rgba(255, 0, 0, 0.847);
+  background-color: #fca6a6;
+}
+
+.tweet-success {
+  display: none;
+  border: 2px dotted;
+  padding: 0.5em;
+  background-position: 10px center;
+  color: rgba(0, 128, 0, 0.759);
+  background-color: #c0f5c0;
+  width: fit-content;
+}
+
+#tweet-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+label {
+  font-weight: bold;
+  border-bottom: solid 5px #545145;
+  height: 2.5rem;
+  margin: 0 1rem 1rem 1rem;
+}
+
+.button-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.button-counter input {
+  font-family: 'Bungee', cursive;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  padding: 0.5rem;
+}
+
+.counter {
+  font-family: "Bungee", cursive;
+  color: #545145;
+}
+
+/* breakpoints */
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    padding-top: 9.4rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .new-tweet {
+    padding-top: 0.5rem;
+  }
+}
