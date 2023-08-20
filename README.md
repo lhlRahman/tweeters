@@ -2,7 +2,12 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+This repository is the starter code for the project and uses HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+
+![Launch Page](https://github.com/lhlRahman/tweeters/raw/main/public/images/tweeter.PNG)
+![Writing Tweet](https://github.com/lhlRahman/tweeters/raw/main/public/images/tweeter2.PNG)
+![Successful Tweet](https://github.com/lhlRahman/tweeters/raw/main/public/images/tweeter3.PNG)
+
 
 ## Getting Started
 
@@ -16,3 +21,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- nodemon 1.9.2
+- Body Parser 1.15
+- md5 2.1
