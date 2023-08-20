@@ -13,11 +13,13 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets) {
+    $("#tweets-container").empty(); // Clear the container
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
       $("#tweets-container").prepend($tweet);
     }
   };
+  
   
   const createTweetElement = function(tweet) {
     const  { user, content, created_at } = tweet;
