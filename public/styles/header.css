@@ -1,4 +1,4 @@
-header {
+.page-header {
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center vertically */
@@ -11,11 +11,11 @@ header {
 }
 
 
-header > div {
+.page-header > div {
   text-align: center;
 }
 
-header > img {
+.page-header > img {
   max-width: 100%;
 }
 
