@@ -6,21 +6,23 @@
 
 $(document).ready(function() {
   
+  // Function to escape any potentially unsafe characters to prevent Cross-Site Scripting (XSS) attacks
   const escape = function(string) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(string));
     return div.innerHTML;
   };
 
+  // Function to render tweets to the page
   const renderTweets = function(tweets) {
-    $("#tweets-container").empty(); // Clear the container
+    $("#tweets-container").empty(); // Clear the container to avoid duplicates
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $("#tweets-container").prepend($tweet);
+      $("#tweets-container").prepend($tweet);  // Add each tweet to the top of the container
     }
   };
   
-  
+  // Function to create a tweet DOM element from a tweet data object
   const createTweetElement = function(tweet) {
     const  { user, content, created_at } = tweet;
 
@@ -35,7 +37,7 @@ $(document).ready(function() {
         </header>
         <span class="user-tweet">${escape(content.text)}</span>
         <footer>
-          <span class="creation-date">${timeago.format(created_at)}</span>
+          <span class="creation-date">${timeago.format(created_at)}</span>  // Format the creation date using timeago library
           <div class="icons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-sharp fa-solid fa-retweet"></i>
@@ -47,7 +49,7 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  // Fetches the Tweets
+  // Function to fetch tweets from the server
   const loadTweets = function() {
     $.ajax({
       type: "GET",
@@ -56,13 +58,17 @@ $(document).ready(function() {
       success: renderTweets
     });
   };
+
+  // Initially load tweets when the page loads
   loadTweets("/tweets", "GET", renderTweets);
 
+  // Event listener for the tweet submission form
   $("form").on("submit", function(event) {
-    event.preventDefault();
+    event.preventDefault();  // Prevent default form submission behavior
     
     const text = $("#tweet-text").val();
       
+    // Check if the tweet is too long or empty and show the appropriate error message
     if (text.length > 140) {
       $(".error-empty").slideUp();
       $(".tweet-success").slideUp();
@@ -78,28 +84,29 @@ $(document).ready(function() {
       $(".error-length").slideUp();
       $(".error-empty").slideUp();
     }
-    // Data serialization
+
+    // Serialize the form data for submission
     let serializedData = $(this).serialize();
 
+    // Submit the tweet to the server
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: serializedData,
     })
-
       .done(function() {
-        loadTweets();
-        $(".tweet-success").slideDown();
+        loadTweets();  // Reload tweets after successful submission
+        $(".tweet-success").slideDown();  // Show success message
         $(".error-length").slideUp();
         $(".error-empty").slideUp();
-        $("textarea").val("");
-        $(".counter").text(140);
+        $("textarea").val("");  // Clear the textarea
+        $(".counter").text(140);  // Reset the character counter
       })
       .fail(function() {
-        console.log("Error!");
+        console.log("Error!");  // Log error message on failure
       })
       .always(function() {
-        console.log("Finished!");
+        console.log("Finished!");  // Log message once AJAX call is completed
       });
   });
 });
