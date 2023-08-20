@@ -4,9 +4,9 @@ Tweeter is a simple, single-page Twitter clone.
 
 This repository is the starter code for the project and uses HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
-![Launch Page](https://github.com/lhlRahman/tweeters/blob/main/public/images/tweeter.PNG)
-![Writing Tweet](https://github.com/lhlRahman/tweeters/blob/main/public/images/tweeter2.PNG)
-![Successful Tweet](https://github.com/lhlRahman/tweeters/blob/main/public/images/tweeter3.PNG)
+![Launch Page](https://github.com/lhlRahman/tweeters/raw/main/public/images/tweeter.PNG)
+![Writing Tweet](https://github.com/lhlRahman/tweeters/raw/main/public/images/tweeter2.PNG)
+![Successful Tweet](https://github.com/lhlRahman/tweeters/raw/main/public/images/tweeter3.PNG)
 
 
 ## Getting Started
