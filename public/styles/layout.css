@@ -25,7 +25,39 @@ main {
 
 
 @media only screen and (min-width: 1024px) {
-  main {
-    width: 50%;
+  /* Ensure the body is a flex container */
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Position the header to the left and center its content vertically */
+  header.page-header {
+    flex-basis: 25%; /* Adjust as necessary */
+    max-width: 25%; /* Adjust as necessary */
+    height: 100vh; /* Take the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+  }
+
+  main.container {
+    flex-grow: 1; /* Allow main content to take remaining space */
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  main.container {
+    padding-top: 130px; /* 120px (nav height) + 10px for some extra space */
+  }
+}
+}
+
+
+  /* Increase font size for better readability */
+  body {
+    font-size: 26px;
   }
 }
