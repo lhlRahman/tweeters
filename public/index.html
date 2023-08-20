@@ -11,19 +11,32 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <!-- Fonts -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+
+    <!-- Viewport zooming disabling --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!-- Bungee Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
 
-        <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- TimeAgo Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -35,33 +48,31 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-
-    <header>
-      <div>
-          <img src="/images/profile-hex.png"> 
-          <div class="texture-overlay"></div>
-      </div>
-      <br>
-      <div>
-          <h2> <b>Abdul</b> Rahman</h2>
+    <header class="page-header">
+      <div class="avatar">
+        <img src="/images/profile-hex.png">
+        <h2><span>Abdul</span> Rahman</h2>
       </div>
     </header>
 
+    <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form>
+       
+        <span class="error-length"><i class="fas fa-exclamation-triangle"></i>Error, You're tweet is too long!</span>
+        <span class="error-empty"><i class="fas fa-exclamation-triangle"></i>Error, You're tweet can't be empty!</span>
+        <span class="tweet-success"><i class="fa-solid fa-check"></i>Nice, You're tweet was posted.</span>
+        
+        <form id="tweet-form" action="/tweets" method="post">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
+          <div class="button-counter">
+            <input type="submit" value="Tweet">
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+      <section id="tweets-container"></section>
     </main>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
   </body>
 </html>
