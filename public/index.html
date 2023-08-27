@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/tweeter/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/tweeter/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/tweeter/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/tweeter/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/tweeter/styles/tweet.css" type="text/css" />
 
     <!-- Viewport zooming disabling --> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,8 +35,8 @@
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/tweeter/scripts/client.js"></script>
+    <script type="text/javascript" src="/tweeter/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -50,7 +50,7 @@
     </nav>
     <header class="page-header">
       <div class="avatar">
-        <img src="/images/profile-hex.png">
+        <img src="/tweeter/images/profile-hex.png">
         <h2><span>Abdul</span> Rahman</h2>
       </div>
     </header>
@@ -63,7 +63,7 @@
         <span class="error-empty"><i class="fas fa-exclamation-triangle"></i>Error, You're tweet can't be empty!</span>
         <span class="tweet-success"><i class="fa-solid fa-check"></i>Nice, You're tweet was posted.</span>
         
-        <form id="tweet-form" action="/tweets" method="post">
+        <form id="tweet-form" action="/tweeter/tweets" method="post">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="button-counter">

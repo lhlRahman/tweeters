@@ -37,7 +37,7 @@ $(document).ready(function() {
         </header>
         <span class="user-tweet">${escape(content.text)}</span>
         <footer>
-          <span class="creation-date">${timeago.format(created_at)}</span>  // Format the creation date using timeago library
+          <span class="creation-date">${timeago.format(created_at)}</span> 
           <div class="icons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-sharp fa-solid fa-retweet"></i>
@@ -53,14 +53,14 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.ajax({
       type: "GET",
-      url: "/tweets",
+      url: "/tweeter/tweets",
       dataType: "json",
       success: renderTweets
     });
   };
 
   // Initially load tweets when the page loads
-  loadTweets("/tweets", "GET", renderTweets);
+  loadTweets("/tweeter/tweets", "GET", renderTweets);
 
   // Event listener for the tweet submission form
   $("form").on("submit", function(event) {
@@ -91,7 +91,7 @@ $(document).ready(function() {
     // Submit the tweet to the server
     $.ajax({
       type: "POST",
-      url: "/tweets",
+      url: "/tweeter/tweets",
       data: serializedData,
     })
       .done(function() {
